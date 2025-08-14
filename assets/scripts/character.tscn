@@ -1,0 +1,129 @@
+[gd_scene load_steps=11 format=3 uid="uid://n7o2535eolwa"]
+
+[ext_resource type="Script" uid="uid://bx2lcdsgp6qb8" path="res://assets/scripts/player-script.gd" id="1_hmiua"]
+[ext_resource type="Script" uid="uid://yc16w6q5bc73" path="res://assets/scripts/player_animation.gd" id="2_aw3tk"]
+[ext_resource type="Texture2D" uid="uid://dm2mevqcpnxm7" path="res://assets/sprites/players/punk_sprite_sheet.png" id="2_hmiua"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hmiua"]
+radius = 8.5
+height = 33.0
+
+[sub_resource type="Animation" id="Animation_hmiua"]
+resource_name = "Idle"
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Animation/Sprite2D:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Rect2(0, 0, 48, 48), Rect2(48, 336, 48, 48), Rect2(96, 336, 48, 48), Rect2(144, 336, 48, 48)]
+}
+
+[sub_resource type="Animation" id="Animation_aw3tk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Animation/Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 48, 48)]
+}
+
+[sub_resource type="Animation" id="Animation_7uwwp"]
+resource_name = "fall"
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Animation/Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(144, 384, 48, 48)]
+}
+
+[sub_resource type="Animation" id="Animation_tu8mn"]
+resource_name = "jump"
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Animation/Sprite2D:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Rect2(0, 384, 48, 48), Rect2(48, 384, 48, 48), Rect2(96, 384, 48, 48), Rect2(144, 384, 48, 48)]
+}
+
+[sub_resource type="Animation" id="Animation_k8nph"]
+resource_name = "move"
+length = 1.25
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Animation/Sprite2D:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Rect2(0, 432, 48, 48), Rect2(48, 432, 48, 48), Rect2(96, 432, 48, 48), Rect2(144, 432, 48, 48), Rect2(192, 432, 48, 48), Rect2(240, 432, 48, 48)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k8nph"]
+_data = {
+&"Idle": SubResource("Animation_hmiua"),
+&"RESET": SubResource("Animation_aw3tk"),
+&"fall": SubResource("Animation_7uwwp"),
+&"jump": SubResource("Animation_tu8mn"),
+&"move": SubResource("Animation_k8nph")
+}
+
+[node name="Punk" type="CharacterBody2D"]
+script = ExtResource("1_hmiua")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, -16.5)
+shape = SubResource("CapsuleShape2D_hmiua")
+
+[node name="Animation" type="Node2D" parent="." node_paths=PackedStringArray("sprite", "animation_player", "player_controller")]
+script = ExtResource("2_aw3tk")
+sprite = NodePath("Sprite2D")
+animation_player = NodePath("AnimationPlayer")
+player_controller = NodePath("..")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Animation"]
+root_node = NodePath("../../Camera2D")
+libraries = {
+&"": SubResource("AnimationLibrary_k8nph")
+}
+autoplay = "Idle"
+speed_scale = 1.5
+
+[node name="Sprite2D" type="Sprite2D" parent="Animation"]
+position = Vector2(11, -24)
+texture = ExtResource("2_hmiua")
+region_enabled = true
+region_rect = Rect2(0, 0, 48, 48)
