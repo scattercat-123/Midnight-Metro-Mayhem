@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4sspj2t8rngc"
-path="res://.godot/imported/5.png-78b15a88bbc658cd31650f93b3e3eca3.ctex"
+uid="uid://cqem6efa3is24"
+path="res://.godot/imported/Key 4 - GOLD - Spritesheet.png-0504035d13a78afdd4d6aa0c8f41941f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/2 Background/Day/5.png"
-dest_files=["res://.godot/imported/5.png-78b15a88bbc658cd31650f93b3e3eca3.ctex"]
+source_file="res://assets/sprites/Key 4 - GOLD - Spritesheet.png"
+dest_files=["res://.godot/imported/Key 4 - GOLD - Spritesheet.png-0504035d13a78afdd4d6aa0c8f41941f.ctex"]
 
 [params]
 

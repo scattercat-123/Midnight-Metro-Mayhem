@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://0b4t8un5v22a"]
+
+[ext_resource type="Texture2D" uid="uid://wy0hhvj2aete" path="res://assets/3 Objects/Other/Hammer.png" id="1_4qib4"]
+[ext_resource type="Script" uid="uid://bphbilq0qkgdi" path="res://assets/scripts/hammer.gd" id="1_26n50"]
+
+[sub_resource type="Animation" id="Animation_bqfvs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 32, 64)]
+}
+
+[sub_resource type="Animation" id="Animation_26n50"]
+resource_name = "hammer"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Rect2(0, 0, 32, 64), Rect2(32, 0, 32, 64), Rect2(64, 0, 32, 64), Rect2(96, 0, 32, 64), Rect2(160, 0, 32, 64)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vrisa"]
+_data = {
+&"RESET": SubResource("Animation_bqfvs"),
+&"hammer": SubResource("Animation_26n50")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4qib4"]
+size = Vector2(18, 66)
+
+[node name="Hammer" type="StaticBody2D"]
+script = ExtResource("1_26n50")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4qib4")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 64)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite2D")
+libraries = {
+&"": SubResource("AnimationLibrary_vrisa")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_4qib4")

@@ -2,11 +2,13 @@ extends CharacterBody2D
 class_name PlayerScript
 
 @export var SPEED = 50
-@export var JUMP_VELOCITY = -7
+@export var JUMP_VELOCITY = -9
 
 var direction = 0
 var SPEED_MULTIPLIER = 6
 var JUMP_VELOCITY_MULTIPLIER = 50
+var keys_collected = 0
+signal all_keys_collected
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -26,3 +28,11 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED * SPEED_MULTIPLIER)
 
 	move_and_slide()
+func reset_keys():
+	keys_collected = 0
+
+func add_keys():
+	keys_collected += 1
+	if keys_collected >= 3:
+		print("collected all")
+		emit_signal("all_keys_collected")

@@ -1,3 +1,8 @@
-res://assets/scenes/level1.tscn
 res://assets/scenes/intro.tscn
+res://assets/scenes/level1.tscn
 res://assets/scripts/character.tscn
+res://assets/scenes/key.tscn
+res://assets/scripts/key.gd
+res://assets/scripts/player-script.gd
+res://assets/scenes/hammer.tscn
+res://assets/scripts/hammer.gd
