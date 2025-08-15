@@ -1,6 +1,6 @@
 extends Sprite2D
 
-@export var start_without_animation: bool = true
+@export var start_without_animation: bool = false
 ## this is for debuggging
 
 func _ready():

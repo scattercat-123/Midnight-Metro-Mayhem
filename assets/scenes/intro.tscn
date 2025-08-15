@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dj4acuw2gcurp"]
+[gd_scene load_steps=9 format=3 uid="uid://dj4acuw2gcurp"]
 
 [ext_resource type="Texture2D" uid="uid://dqsgx7kfhyve5" path="res://assets/sprites/scat_studios.png" id="1_e2c8y"]
 [ext_resource type="Texture2D" uid="uid://bb65cxjbtgva3" path="res://assets/sprites/logo.png" id="2_vxlar"]
-[ext_resource type="Script" uid="uid://8at1dybsgse5" path="res://assets/scripts/start-button.gd" id="3_w7g36"]
 [ext_resource type="Texture2D" uid="uid://6r61k7i5ucpk" path="res://assets/sprites/start-button.png" id="3_y745p"]
+[ext_resource type="Texture2D" uid="uid://cuj7sxaxatymm" path="res://assets/sprites/levels.png" id="5_5dkqn"]
+[ext_resource type="Script" uid="uid://dcumnio2wjo8" path="res://assets/scripts/start.gd" id="5_jow2t"]
 
 [sub_resource type="Animation" id="Animation_vxlar"]
 length = 0.001
@@ -126,6 +127,54 @@ tracks/9/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(1296, 536)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Label2:text")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Label3:text")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Sprite2D4:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Logo:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_e2c8y"]
@@ -251,6 +300,54 @@ tracks/9/keys = {
 "update": 0,
 "values": [Vector2(-136, 531), Vector2(1296, 536)]
 }
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Label2:text")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 8.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["", " ← Recommended for first time players"]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Label3:text")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 8.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["", "If you have played b4→"]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Sprite2D4:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 8.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Logo:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vxlar"]
 _data = {
@@ -305,12 +402,6 @@ libraries = {
 }
 autoplay = "intro"
 
-[node name="start" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(588, 465)
-texture = ExtResource("3_y745p")
-script = ExtResource("3_w7g36")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1294, 106)
 scale = Vector2(0.25, 0.25)
@@ -325,3 +416,41 @@ texture = ExtResource("2_vxlar")
 position = Vector2(1296, 536)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_vxlar")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 495.0
+offset_top = 472.0
+offset_right = 828.0
+offset_bottom = 495.0
+rotation = -0.305859
+scale = Vector2(1.63406, 1.63406)
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(963, 176)
+scale = Vector2(3.88, 3.88)
+texture = ExtResource("5_5dkqn")
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 22.0
+offset_right = 670.0
+offset_bottom = 45.0
+rotation = 0.336747
+scale = Vector2(1.61472, 1.61472)
+
+[node name="Logo" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(303, 279)
+rotation = -0.274971
+scale = Vector2(0.322099, 0.308871)
+texture = ExtResource("2_vxlar")
+
+[node name="start" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(251, 548)
+scale = Vector2(0.490625, 0.490625)
+texture = ExtResource("3_y745p")
+script = ExtResource("5_jow2t")

@@ -6,3 +6,15 @@ res://assets/scripts/key.gd
 res://assets/scripts/player-script.gd
 res://assets/scenes/hammer.tscn
 res://assets/scripts/hammer.gd
+res://assets/scripts/start-button.gd
+res://assets/scenes/HUD.tscn
+res://assets/scripts/hud.gd
+res://assets/scripts/tutorial_guide.gd
+res://assets/scenes/gameover.tscn
+res://assets/scripts/gameover.gd
+res://assets/scenes/start_button.gd
+res://assets/scripts/start_button.gd
+res://assets/scripts/start.gd
+res://assets/scenes/door.tscn
+res://assets/scripts/door.gd
+res://assets/scenes/level2.tscn
