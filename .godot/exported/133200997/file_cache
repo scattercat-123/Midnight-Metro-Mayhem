@@ -1,0 +1,11 @@
+res://addons/godot_super-wakatime/api_key_prompt.tscn::a6988a5ba43d5aa92a08f216c1db28db::1755082622::res://.godot/exported/133200997/export-cd8705cb5e2533bd79c64579ac674dae-api_key_prompt.scn
+res://addons/godot_super-wakatime/counter.tscn::7f13ad35960e259f6de719f9785ce249::1755082622::res://.godot/exported/133200997/export-4af6c9115c1c285af5925fa1ce6a526e-counter.scn
+res://assets/scenes/gameover.tscn::b7dea5ed191a0d1757bbd8b74b490213::1755273598::res://.godot/exported/133200997/export-86abc1a3194c8540dba7e50629702eda-gameover.scn
+res://assets/scenes/hammer.tscn::32bf9a7eef2959d3f8c9407dc17d7b0a::1755273597::res://.godot/exported/133200997/export-a2f4cc360f903f4d72bc0e1cd302f60d-hammer.scn
+res://assets/scenes/HUD.tscn::5a5def6325a2bd495280146fb88ac48e::1755273598::res://.godot/exported/133200997/export-2d9a279b71e417919f2ea8994e9057e7-HUD.scn
+res://assets/scenes/intro.tscn::25e3ef3239e2abaab423a69225e0d170::1755273597::res://.godot/exported/133200997/export-ea08e1b3199d1e1f816be9171fd406f7-intro.scn
+res://assets/scenes/key.tscn::51e6b726e276f03d10eae8f85b3e84a8::1755273597::res://.godot/exported/133200997/export-bb5fe158fdacf8f1dd1569706faf947a-key.scn
+res://assets/scenes/level1.tscn::686715ed5c6e6ec1b47b78213ada0a78::1755273597::res://.godot/exported/133200997/export-58ac4cab752237d8b437cb105ab49728-level1.scn
+res://assets/scenes/door.tscn::e2916a120e8582e38599978794adbd5e::1755273598::res://.godot/exported/133200997/export-86abb2df8036698686fb1287aef04aa2-door.scn
+res://assets/scenes/level2.tscn::e626c483690536fc0f4debeec43571fc::1755273598::res://.godot/exported/133200997/export-698e8905dc2b8a02a7068a1ec8df8d79-level2.scn
+res://assets/scripts/character.tscn::a12eb6b8b336aef4d8f026b76df23ce5::1755273597::res://.godot/exported/133200997/export-037c9177213b7b1acdc3937702a1f4bd-character.scn
