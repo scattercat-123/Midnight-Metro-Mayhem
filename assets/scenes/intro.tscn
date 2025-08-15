@@ -179,7 +179,7 @@ tracks/13/keys = {
 
 [sub_resource type="Animation" id="Animation_e2c8y"]
 resource_name = "intro"
-length = 200.0
+length = 10.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
